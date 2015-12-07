@@ -1,0 +1,37 @@
+{
+  "name": "angular-base",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "lint": "jshint src/app/**.js",
+    "test": "mocha src/tests/",
+    "build:css": "pleeease compile",
+    "build:layout": "cp src/assets/layouts/*.html dist/",
+    "build:html": "npm-html2js -b src/app/views -i src/app/views/**/*.jade -o dist/js/templates.js",
+    "build:js": "browserify src/app/app.js > dist/js/main.js",
+    "build": "npm run build:html && npm run build:css && npm run build:js",
+    "prebuild:js": "npm run lint",
+    "prepublish": "npm run build # also runs npm run prebuild",
+    "prebuild": "npm run test # also runs npm run pretest",
+    "pretest": "npm run lint"
+  },
+  "author": "",
+  "license": "aGPL",
+  "devDependencies": {
+    "browserify": "latest",
+    "jade": "^1.11.0",
+    "jshint": "latest",
+    "ng-html2js": "^2.0.0",
+    "npm-html2js": "^0.1.8",
+    "pleeease": "^4.0.4"
+  },
+  "dependencies": {
+    "angular": "^1.4.8",
+    "angular-gettext": "^2.1.2",
+    "angular-route": "^1.4.8",
+    "lodash": "^3.10.1",
+    "moment": "^2.10.6",
+    "normalize.css": "^3.0.3",
+    "restangular": "^1.5.1"
+  }
+}

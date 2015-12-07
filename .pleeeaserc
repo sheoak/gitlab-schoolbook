@@ -1,0 +1,6 @@
+{
+  "in": ["src/assets/styles/styles.css"],
+  "out": "dist/css/styles.css",
+  "browsers": ["last 3 versions", "Android 2.3"]
+}
+
