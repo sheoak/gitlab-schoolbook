@@ -7,7 +7,7 @@
     "test": "mocha src/tests/",
     "build:css": "pleeease compile",
     "build:layout": "cp src/assets/layouts/*.html dist/",
-    "build:html": "npm-html2js -b src/app/views -i src/app/views/**/*.jade -o dist/js/templates.js",
+    "build:html": "npm-html2js -b src/app -i src/app/**/*.jade -o dist/js/templates.js",
     "build:js": "browserify src/app/app.js > dist/js/main.js",
     "build": "npm run build:html && npm run build:css && npm run build:js",
     "prebuild:js": "npm run lint",

@@ -2,6 +2,8 @@
 
     'use strict';
 
+    var lodash = require('lodash');
+
     require('angular');
     require('angular-route');
     require('restangular');
@@ -13,19 +15,20 @@
 
     var app = angular.module("myapp", [
             'ngRoute',
-            'restangular',
+     //       'restangular',
             'myapp.home',
+            'app.template'
     ]);
 
     // config file
-    //app.constant("config", require('./constant'));
+    app.constant("config", require('./app.constant'));
 
     // expose vendor libraries
-    app.constant('_',       require('lodash'));
+    app.constant('_', lodash);
     app.constant('moment',  require('moment'));
 
-    //app.config(require('./routes'));
-    //app.config(require('./config'));
+    app.config(require('./app.routes'));
+    //app.config(require('./app.config'));
 
     //app.run(require('./run'));
 

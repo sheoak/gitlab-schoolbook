@@ -1,10 +1,10 @@
 (function () {
     'use strict';
 
-    module.exports = function($routeProvider, $locationProvider) {
+    module.exports = function($routeProvider) {
         $routeProvider
             .when('/', {
-                templateUrl: './views/home/home.html'
+                templateUrl: 'components/home/home.jade'
             })
         .otherwise({
             redirectTo: '/'
